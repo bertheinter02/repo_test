@@ -1,23 +1,5 @@
-# PROJET QUESTIONNAIRE V3 : POO
-#
-# - Pratiquer sur la POO
-# - Travailler sur du code existant
-# - Mener un raisonnement
-#
-# -> Définir les entitées (données, actions)
-#
-# Question
-#    - titre       - str
-#    - choix       - (str)
-#    - bonne_reponse   - str
-#
-#    - poser()  -> bool
-#
-# Questionnaire
-#    - questions      - (Question)
-#
-#    - lancer()
-#
+import json
+
 
 class Question:
     def __init__(self, titre, choix, bonne_reponse):
@@ -88,12 +70,20 @@ lancer_questionnaire(questionnaire)"""
 # q = Question.FromData(data)
 # print(q.__dict__)
 
-Questionnaire(
-    (
-    Question("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris"), 
-    Question("Quelle est la capitale de l'Italie ?", ("Rome", "Venise", "Pise", "Florence"), "Rome"),
-    Question("Quelle est la capitale de la Belgique ?", ("Anvers", "Bruxelles", "Bruges", "Liège"), "Bruxelles")
-    )
-).lancer()
+# Questionnaire(
+#     (
+#     Question("Quelle est la capitale de la France ?", ("Marseille", "Nice", "Paris", "Nantes", "Lille"), "Paris"), 
+#     Question("Quelle est la capitale de l'Italie ?", ("Rome", "Venise", "Pise", "Florence"), "Rome"),
+#     Question("Quelle est la capitale de la Belgique ?", ("Anvers", "Bruxelles", "Bruges", "Liège"), "Bruxelles")
+#     )
+# ).lancer()
+
+# Changer un ficher JSON
+filename = "cinema_starwars_debutant.json"
+file = open(filename, "r")
+json_data = file.read()
+file.close()
+Questionnaire_data = json.loads(json_data)
 
 
+print()
